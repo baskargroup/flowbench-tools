@@ -1,4 +1,4 @@
-# BioCLIP [![DOI](https://zenodo.org/badge/725653485.svg)](https://zenodo.org/doi/10.5281/zenodo.10895870)
+# FlowBench [![DOI](https://zenodo.org/badge/725653485.svg)](https://zenodo.org/doi/10.5281/zenodo.10895870)
 
 
 This is the repository for the [FlowBench](https://huggingface.co/imageomics/bioclip) and the [TreeOfLife-10M dataset](https://huggingface.co/datasets/imageomics/TreeOfLife-10M). It contains the code used for training and the evaluation of BioCLIP (testing and visualizing embeddings). Additionally, we include a collection of scripts for forming, evaluating, and visualizing the data used for TreeOfLife-10M and the [Rare Species benchmark](https://huggingface.co/datasets/imageomics/rare-species) we created alongside it. The BioCLIP website is hosted from the `gh-pages` branch of this repository.
