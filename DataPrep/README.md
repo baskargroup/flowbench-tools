@@ -33,6 +33,13 @@ For a glossary of abbreviations, please refer to Table - 5 in the appendix to ou
 - The constants files are different for each case and are used to obtain dimensionless numbers [Cd,Cl,Nu] for the respective cases.
 
 ## Usage
--  
+- Each Script necessitates that the user provide the following:
+	-
+- To execute run the following commands
+	- ```python3 ldc2dns.py```
+	- ```python3 ldc2dnsht-constRe.py```  
+	- ```python3 ldc2dnsht-varRe.py```
+	- ```python3 ldc2dfpo.py```
+	- ```python3 ldc3dns.py```
 
 
