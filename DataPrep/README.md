@@ -18,7 +18,7 @@ For a glossary of abbreviations, please refer to Table - 5 in the appendix to ou
 	- 2D LDC - NS - ldc2dns.py - e.g., ```X[3000][Re,g,s][512][512] , Y[3000][u,v,p,C][512][512]```. Refer to Table 1 in our supplementary for details about C.
 	- 2D LDC - NS+HT [Constant Reynolds] - ldc2dnsht-constRe.py - e.g., ```X[2990][Gr,g,s][512][512] , Y[2990][u,v,p,theta,C*][512][512]```. Refer to Table 1 in our supplementary for details about C*.
 	- 2D LDC - NS+HT [Variable Reynolds] - ldc2dnsht-varRe.py - e.g., ```X[3000][Ri, Re, g, s][512][512] , Y[3000][u,v,p,theta,C*][512][512]```. Refer to Table 1 in our supplementary for details about C*.
-	- 2D FPO - NS - ldc2dfpo.py - e.g., ```X[1150][Re,g,s][512][512] , Y[1150][u,v,p][512][512]```.
+	- 2D FPO - NS - ldc2dfpo.py - e.g., ```Y[1150][u,v,p][t1...t240][512][128]```.
 	- 3D LDC - NS - ldc3dns.py - e.g., ```X[500][Re,g,s][128][128][128] , Y[500][u,v,p][128][128][128]```.
 
 ## Requirements
@@ -41,12 +41,13 @@ For a glossary of abbreviations, please refer to Table - 5 in the appendix to ou
 	- Full path of the constants file. We have one constants file per geometry type and problem type. This is not dependent on the output resolution desired.
 	- Full path to the input geometries folder. Note, we have three geometries (100 cases each) at three resolutions each. Please match geometry type and resolution.
 	- Note that these values will have to be edited in the respective script itself before executing the next steps. The relevant variable names associated with the above settings are self explanatory.
+	- Note that the FPO is a transient problem. We fit a Seq to Seq model. Hence the geometry is irrelevant for the problem.
 
 - To execute run the following commands
 	- ```python3 ldc2dns.py```
 	- ```python3 ldc2dnsht-constRe.py```  
 	- ```python3 ldc2dnsht-varRe.py```
-	- ```python3 ldc2dfpo.py```
+	- ```python3 ldc2dfpo.py t_start_in t_end_in t_start_out t_end_out ```
 	- ```python3 ldc3dns.py```
 
 
