@@ -139,9 +139,9 @@ def flow_past_object(base_folder_data : str,
             #Loop over the time steps
             for time_step_out in range(t_start_out, t_end_out+1):
                   
-                _rhs[sample_ctr, 0, dur, :, :] = _data[time_step_out,0,:,:]
-                _rhs[sample_ctr, 1, dur, :, :] = _data[time_step_out,1,:,:]
-                _rhs[sample_ctr, 2, dur, :, :] = _data[time_step_out,2,:,:]
+                _rhs[sample_ctr, dur, 0, :, :] = _data[time_step_out,:,:,0]
+                _rhs[sample_ctr, dur, 1, :, :] = _data[time_step_out,:,:,1]
+                _rhs[sample_ctr, dur, 2, :, :] = _data[time_step_out,:,:,2]
 
                 dur += 1
                 
