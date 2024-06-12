@@ -12,6 +12,12 @@ This script is designed to train a machine learning model using a specified data
 - Saves trained models and logs training process
 - Evaluates model performance on validation/test data
 
+
+## Residuals
+
+We provide a script to calculate the integral of the momentum and continuity residuals using the NeuFEnet approach as explained in this [paper] (https://arxiv.org/pdf/2110.01601).
+
+
 ## Requirements
 
 - Python 3.x
