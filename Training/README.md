@@ -15,7 +15,7 @@ This script is designed to train a machine learning model using a specified data
 
 ## Residuals
 
-We provide a script to calculate the integral of the momentum and continuity residuals using the NeuFEnet approach as explained in this [paper] (https://arxiv.org/pdf/2110.01601).
+We provide a script to calculate the integral of the momentum and continuity residuals using the NeuFEnet approach as explained in this [paper](https://arxiv.org/pdf/2110.01601).
 
 
 ## Requirements
