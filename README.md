@@ -1,61 +1,35 @@
-# FlowBench [![DOI](https://zenodo.org/badge/725653485.svg)](https://zenodo.org/doi/10.5281/zenodo.10895870)
+# FlowBench 
 
+This is the repository for the [FlowBench](https://baskargroup.bitbucket.io/). It contains the link to the full dataset and the code used for training the SciML operators. Additionally, we include a collection of scripts for preparing data into machine learning format and downsampling data into lower resolution.
 
-This is the repository for the [FlowBench](https://huggingface.co/imageomics/bioclip) and the [TreeOfLife-10M dataset](https://huggingface.co/datasets/imageomics/TreeOfLife-10M). It contains the code used for training and the evaluation of BioCLIP (testing and visualizing embeddings). Additionally, we include a collection of scripts for forming, evaluating, and visualizing the data used for TreeOfLife-10M and the [Rare Species benchmark](https://huggingface.co/datasets/imageomics/rare-species) we created alongside it. The BioCLIP website is hosted from the `gh-pages` branch of this repository.
+<!-- [Model](https://huggingface.co/imageomics/bioclip) | [Data](https://huggingface.co/datasets/imageomics/TreeOfLife-10M) | [Website](https://huggingface.co/datasets/imageomics/TreeOfLife-10M)
+--- -->
 
-[Paper](https://arxiv.org/abs/2311.18803) | [Model](https://huggingface.co/imageomics/bioclip) | [Data](https://huggingface.co/datasets/imageomics/TreeOfLife-10M) | [Demo](https://huggingface.co/spaces/imageomics/bioclip-demo)
----
+FlowBench is an extensive flow dataset which contains over 10,000 data samples of a fully resolved numerical simulation for modeling transport phenomena in complex geometries. FlowBench will facilitate the evaluation of the interplay between complex geometry, coupled flow phenomena, and data sufficiency on the performance of current and future neural PDE solvers.
 
-BioCLIP is a CLIP model trained on a new 10M-image dataset of biological organisms with fine-grained taxonomic labels.
-BioCLIP outperforms general domain baselines on a wide spread of biology-related tasks, including zero-shot and few-shot classification.
 
 ## Table of Contents
 
 1. [Model](#model)
 2. [Data](#data)
-3. [Paper, website, and docs](#paper)
-4. [Citation](#citation)
+3. [Website](#website)
+<!-- 4. [Citation](#citation) -->
 
 ## Model
 
-The BioCLIP model is a ViT-B/16 pre-trained with the CLIP objective.
-Both the ViT and the (small) autoregressive text encoder are available to download on [Hugging Face](https://huggingface.co/imageomics/bioclip).
-
-The only dependency is the [`open_clip`](https://github.com/mlfoundations/open_clip) package.
-
-See the `examples/` directory for examples on how to use it.
-You can also use this package [pybioclip](https://github.com/Imageomics/pybioclip) or the [demo](https://huggingface.co/spaces/imageomics/bioclip-demo) on Hugging Face.
+We include workflows to train three types of neural operators: Fourier Neural Operators (FNO), Convolutional Neural Operators (CNO), and Deep Operator Networks (DeepONets). The implementation of the three networks are included here.
 
 ## Data
 
-BioCLIP was trained on TreeOfLife-10M (ToL-10M).
-The data is a combination of [iNat21](https://github.com/visipedia/inat_comp/tree/master/2021), [BIOSCAN-1M](https://github.com/zahrag/BIOSCAN-1M), and data we collected and cleaned from [Encyclopedia of Life (EOL)](https://eol.org). It contains images for more than 450K distinct taxa, as measured by 7-rank [Linnaean taxonomy](https://www.britannica.com/science/taxonomy/The-objectives-of-biological-classification) (kingdom through species); this taxonomic string is associated to each image along with its common (or vernacular name) where available.
-
-We cannot re-release the iNat21 or the BIOSCAN-1M datasets; however, we have uploaded our cleaned EOL data to [TreeOfLife-10M](https://huggingface.co/datasets/imageomics/TreeOfLife-10M) on Hugging Face.
-After downloading iNat21 and BIOSCAN-1M, the three datasets can be combined into TreeOfLife-10M in the [webdataset format](https://github.com/webdataset/webdataset) for model training by following the directions in [`treeoflife10m.md`](/docs/imageomics/treeoflife10m.md).
+FlowBench offers over 10,000 solutions for flow around complex geometries in both 2D and 3D. Simulation include fluid flow and thermal flow scenarios, and our solutions are available as either single snapshots or time sequences, addressing both steady-state and time-dependent scenarios. The dataset is provided at three different resolutions and includes essential features like a geometry mask and a signed distance field. It is specifically designed to support the development of next-generation scientific machine learning (SciML) neural PDE solvers, particularly those tackling complex geometries and multiphysics phenomena.
 
 
-10 biologically-relevant datasets were used for various tests of [BioCLIP](https://huggingface.co/imageomics/bioclip), they are described (briefly) and linked to below. For more information about the contents of these datasets, see Table 2 and associated sections of [our paper](https://doi.org/10.48550/arXiv.2311.18803). Annotations used alongside the datasets for evaluation are provided in subfolders of the `data/` directory named for the associated dataset.
+<h2> Website </h2>
 
-#### Test Sets
-
-- [Meta-Album](https://paperswithcode.com/dataset/meta-album): Specifically, we used the Plankton, Insects, Insects 2, PlantNet, Fungi, PlantVillage, Medicinal Leaf, and PlantDoc datasets from Set-0 through Set-2 (Set-3 had not yet been released).
- - [Birds 525](https://www.kaggle.com/datasets/gpiosenka/100-bird-species): We evaluated on the 2,625 test images provided with the dataset.
- - [Rare Species](https://huggingface.co/datasets/imageomics/rare-species): A new dataset we curated for the purpose of testing this model and to contribute to the ML for Conservation community. It consists of nearly 12K images representing 400 species labeled Near Threatened through Extinct in the Wild by the [IUCN Red List](https://www.iucnredlist.org/). For more information, see our [Rare Species dataset](https://huggingface.co/datasets/imageomics/rare-species).
+We have a [project website](https://baskargroup.bitbucket.io/) which highlights FlowBench main results. Our website gives an overview of our dataset, geometries, solver, and our research team that worked on this project.
 
 
-
-<h2 id="paper">Paper, Website, and Docs</h2>
-
-We have a preprint on [arXiv](https://arxiv.org/abs/2311.18803) and a [project website](https://imageomics.github.io/bioclip/).
-We also will link to the upcoming CVPR 2024 version when it is publicly available.
-
-
-The `docs/` directory is divided into two subfolders: [`imageomics/`](/docs/imageomics) and `open_clip/`. The former is documentation relating to the creation of BioCLIP, TreeOfLife-10M, and the Rare Species dataset, while the latter is documentation from the [`open_clip`](https://github.com/mlfoundations/open_clip) package (this has not been altered).
-We plan on adding more docs on how to use BioCLIP in a variety of settings.
-For now, if it is unclear how to integrate BioCLIP into your project, please open an issue with your questions.
-
-## Citation
+<!-- ## Citation
 
 Our paper:
 
@@ -108,4 +82,4 @@ Also consider citing OpenCLIP, iNat21 and BIOSCAN-1M:
   booktitle={Advances in Neural Information Processing Systems ({NeurIPS}) Datasets \& Benchmarks Track},
   year={2023},
 }
-```
+``` -->
