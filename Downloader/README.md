@@ -2,26 +2,19 @@
 
 ## Overview
 
-This script is designed to automate the process of downloading a dataset from a specified URL. It ensures that the dataset is downloaded to a designated directory, and includes options for verifying the integrity of the downloaded file.
+This script is designed to automate the process of downloading a dataset from our datastores. It ensures that the dataset is downloaded to a designated directory with an appropriate name. Please note that the files are very large. Ensure you have sufficient space before initiating a download. In addition, check for any instructions specified in our datastores as .txt files.
 
 ## Features
 
-- Downloads dataset from a given URL
-- Supports resuming incomplete downloads
-- Verifies file integrity using checksums (optional)
-- Organizes downloaded files in a specified directory
-- Provides command-line interface for easy usage
+- Downloads dataset from our datastores
+- Easy to use interactive options to pick the correct dataset
+- Data is downloaded with an instructive name
 
 ## Requirements
 
-- Python 3.x
-- `requests` library (for handling HTTP requests)
-- `tqdm` library (for displaying progress bars)
-- `hashlib` library (for checksum verification, optional)
+- wget utility installed on your machine/server.
 
-## Installation
-
-To install the required libraries, run:
-
-```sh
-pip install requests tqdm
+## Usage
+- Move to a directory on your local machine/server where you intend to download a dataset.
+- Run ```bash downloader.sh```
+- Choose the appropriate interactive options.
