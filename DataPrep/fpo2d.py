@@ -89,10 +89,10 @@ def flow_past_object(base_folder_data : str,
     Numpy tensor initialization for the input and output data
     '''
     #Create an empty 4d array - (samples x channel x grid x grid) - Input data
-    _lhs = np.zeros((total_samples, num_in_channels, duration_in, grid_size_x, grid_size_y))
+    _lhs = np.zeros((total_samples, duration_in, num_channels_in, grid_size_y, grid_size_x))
     
     #Create an empty 4d array - (samples x channel x grid x grid) - Output data
-    _rhs = np.zeros((total_samples, num_out_channels, duration_out, grid_size_x, grid_size_y))
+    _rhs = np.zeros((total_samples, duration_out, num_channels_out, grid_size_y, grid_size_x))
     
     '''
     Add the data to the 4D arrays : Input and Output
@@ -106,10 +106,10 @@ def flow_past_object(base_folder_data : str,
         case_dir = os.path.join(base_folder_data, str(case))
         
         #There are 5 files in this directory - <>sol_t.npz. Get the Reynolds numbers from the files
-        _reynolds = glob.glob(os.path.join(case_dir, '*sol*.npz'))
+        _reynolds = glob.glob(os.path.join(case_dir, 'Re*.npz'))
         
-        #Extract the Reynolds numbers from the file names. The cryptic file names are of the form Re_<Reynolds#>_sol_<time>.npz
-        reynold_nos = [int(os.path.basename(_reynolds[i]).split('_')[1]) for i in range(num_Res)]
+        #Extract the Reynolds numbers from the file names. The cryptic file names are of the form Re_<Reynolds#>.npz
+        reynold_nos = [int(os.path.basename(_reynolds[i]).split('_')[1]) for i in range(len(_reynolds)]
         
         #Loop over the Reynolds numbers
         for reynold_no in reynold_nos:
@@ -126,9 +126,10 @@ def flow_past_object(base_folder_data : str,
             for time_step_in in range(t_start_in, t_end_in+1):
                 
                 #Add the data to the 4D arrays - Input and Output
-                _lhs[sample_ctr, 0, dur, :, :] = _data[time_step_in,0,:,:]
-                _lhs[sample_ctr, 1, dur, :, :] = _data[time_step_in,1,:,:]
-                _lhs[sample_ctr, 2, dur, :, :] = _data[time_step_in,2,:,:]
+                _lhs[sample_ctr, dur, 0, :, :] = _data[time_step_in,:,:,0]
+                _lhs[sample_ctr, dur, 1, :, :] = _data[time_step_in,:,:,1]
+                _lhs[sample_ctr, dur, 2, :, :] = _data[time_step_in,:,:,2]
+
                 dur += 1
             
             '''
@@ -141,6 +142,7 @@ def flow_past_object(base_folder_data : str,
                 _rhs[sample_ctr, 0, dur, :, :] = _data[time_step_out,0,:,:]
                 _rhs[sample_ctr, 1, dur, :, :] = _data[time_step_out,1,:,:]
                 _rhs[sample_ctr, 2, dur, :, :] = _data[time_step_out,2,:,:]
+
                 dur += 1
                 
             #Increment the sample counter
@@ -149,6 +151,10 @@ def flow_past_object(base_folder_data : str,
     #Print the total number of samples
     print("Total number of samples expected: ", total_samples)
     print("\nTotal number of samples processed: ", sample_ctr)
+
+    #Adjust dimensions before saving
+    _lhs = np.transpose(_lhs, (0,1,2,4,3))
+    _rhs = np.transpose(_rhs, (0,1,2,4,3))
             
     #Save the data - data_set is contained in the npz file i.e., you have to specify the key 'data_set' to access the data from the npz file
     np.savez_compressed(output_dir + 'flow_past_object_X.npz', data = _lhs)
