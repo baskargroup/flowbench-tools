@@ -1,25 +1,37 @@
 # Dataset Preparation Script
 
 ## Overview
+We provide a script for each family of our datasets. This prepares the final tensors that can be fed into a SciML model. They are enumerated as follows:
 
-This script is designed to process and prepare a dataset from downloaded files. It includes functionality for extracting, cleaning, and organizing data into a format suitable for machine learning or other types of analysis. The script ensures that the data is properly formatted and ready for use in training or evaluation tasks.
+- 2D LDC - NS - ldc2dns.py
+- 2D LDC - NS+HT [Constant Reynolds] - ldc2dnsht-constRe.py
+- 2D LDC - NS+HT [Variable Reynolds] - ldc2dnsht-varRe.py
+- 2D FPO - NS - ldc2dfpo.py
+- 3D LDC - NS - ldc3dns.py
+
+For a glossary of abbreviations, please refer to Table - 5 in the appendix to our main paper.
 
 ## Features
 
-- Extracts data from various file formats (e.g., ZIP, TAR, CSV)
-- Cleans and preprocesses raw data
-- Organizes data into structured directories
-- Handles missing values and outliers
-- Splits data into training, validation, and test sets
+-  For the LDC family of datasets, we generate the steady state solutions. Users obtain the input and output tensors with the following formats
+
+	- 2D LDC - NS - ldc2dns.py
+	- 2D LDC - NS+HT [Constant Reynolds] - ldc2dnsht-constRe.py
+	- 2D LDC - NS+HT [Variable Reynolds] - ldc2dnsht-varRe.py
+	- 2D FPO - NS - ldc2dfpo.py
+	- 3D LDC - NS - ldc3dns.py
+
 
 ## Requirements
 
-- Python 3.x
-- Required libraries specified in `requirements.txt`
+- Python 3.9+
+- Required libraries : numpy, pandas
+- Additional Constants Files are required for some cases. These are provided in our data store. They are as follows:
+	- ldc2dns.py - HARMONICS\_2D\_NS.txt, NURBS\_2D\_NS.txt SKELNETON\_2D\_NS.txt
+	- ldc2dnsht-constRe.py - HARMONICS\_2D\_NS.txt, NURBS\_2D\_NS.txt SKELNETON\_2D\_NS.txt
+	- ldc2dnsht-varRe.py - HARMONICS\_2D\_NS.txt, NURBS\_2D\_NS.txt SKELNETON\_2D\_NS.txt
 
-## Installation
+## Usage
+- 
 
-To install the required libraries, run:
 
-```sh
-pip install -r requirements.txt
