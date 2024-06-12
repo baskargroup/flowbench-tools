@@ -33,8 +33,14 @@ For a glossary of abbreviations, please refer to Table - 5 in the appendix to ou
 - The constants files are different for each case and are used to obtain dimensionless numbers [Cd,Cl,Nu] for the respective cases.
 
 ## Usage
+
 - Each Script necessitates that the user provide the following:
-	-
+	- Path to the downsampled files. Please refer to the directory ```Downsampling```
+	- Resolution
+	- Full path of the desired X and Y tensors
+        - Full path of the constants file
+	- Full path to the input geometries folder. Note, we have three geometries (100 cases each) at three resolutions each. Please match geometry type and resolution.
+
 - To execute run the following commands
 	- ```python3 ldc2dns.py```
 	- ```python3 ldc2dnsht-constRe.py```  
