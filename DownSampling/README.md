@@ -7,10 +7,10 @@ This script provides a way to convert data from a PVTU file format to an NPZ fil
 
 The primary purpose of this script is to:
 1. Load data from a PVTU file.
-2. Resample the data into a specified image format.
-3. Extract specific fields from the resampled data.
+2. Resample the data into a specified resolution e.g., 512x512.
+3. Extract specific fields e.g., `u,v,p` from the resampled data.
 4. Combine these fields into a single array.
-5. Save the combined array in NPZ format for easy loading and use in Python.
+5. Save the combined array in NPZ format for easy loading and use by downstream tensor creation for ML. Refer to the `DataPrep` directory in this repository.
 
 ## How to Use
 
@@ -21,8 +21,8 @@ The primary purpose of this script is to:
 2. **Load the PVTU File:**
    - The script uses ParaView's `XMLPartitionedUnstructuredGridReader` to read the PVTU file.
 
-3. **Resample the Data:**
-   - The data is resampled to a specified image dimension using `ResampleToImage`. Adjust the `SamplingDimensions` as needed.
+3. **Resample the Data to a desired resolution:**
+   - The data is resampled to a specified image dimension using `ResampleToImage`. Adjust the `SamplingDimensions` as needed. Choose 512x512 or 256x256 or 128x128
 
 4. **Convert Point Data to Cell Data:**
    - The script converts point data to cell data using the `PointDatatoCellData` filter.
@@ -44,7 +44,7 @@ This script provides a method to convert data from a PVTU file format to an NPZ 
 
 The primary purpose of this script is to:
 1. Load data from a PVTU file.
-2. Resample the data into a specified image format.
+2. Resample the data into a specified resolution.
 3. Extract specific fields from the resampled data.
 4. Combine these fields into a single array.
 5. Save the combined array in NPZ format for easy loading and use in Python.
@@ -58,8 +58,9 @@ The primary purpose of this script is to:
 2. **Load the PVTU File:**
    - The script uses VTK's `vtkXMLPUnstructuredGridReader` to read the PVTU file.
 
-3. **Resample the Data:**
+3. **Resample the Data to a desired resolution:**
    - The data is resampled to a specified image dimension using `vtk.vtkResampleToImage`. Adjust the `SetSamplingDimensions` and `SetSamplingBounds` as needed.
+   - Choose one of 512x128, 1024x256 and 2048x512
 
 4. **Convert Point Data to Cell Data:**
    - The script converts point data to cell data using the `vtkPointDataToCellData` filter.
@@ -81,7 +82,7 @@ This script provides a way to convert data from a 3D PVTU file format to an NPZ 
 
 The primary purpose of this script is to:
 1. Load data from a PVTU file.
-2. Resample the data into a specified image format.
+2. Resample the data into a specified resolution. Choose 128x128x128
 3. Extract specific fields from the resampled data.
 4. Combine these fields into a single array.
 5. Save the combined array in NPZ format for easy loading and use in Python.
@@ -95,7 +96,7 @@ The primary purpose of this script is to:
 2. **Load the PVTU File:**
    - The script uses ParaView's `XMLPartitionedUnstructuredGridReader` to read the PVTU file.
 
-3. **Resample the Data:**
+3. **Resample the Data to desired resolution:**
    - The data is resampled to a specified image dimension using `ResampleToImage`. Adjust the `SamplingDimensions` as needed.
 
 4. **Convert Point Data to Cell Data:**
