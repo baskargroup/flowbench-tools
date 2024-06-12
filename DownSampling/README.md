@@ -1,5 +1,5 @@
 # Python Script for Converting PVTU Data to NPZ Format
-## LDCdownsampling2D.py
+## LDCdownsampling2D.py - Use this for both NS and NSHT for LDC - 2D
 
 This script provides a way to convert data from a PVTU file format to an NPZ file format. This script has been used to convert Dendrite outputs (PVTU) to npz format in Lid Driven Cavity cases.
 
@@ -35,7 +35,7 @@ The primary purpose of this script is to:
    - Save the combined array as an NPZ file using `np.savez`.
 
 
-## FPOdownsampling2D.py
+## FPOdownsampling2D.py - Use this for 2D FPO - NS
 
 This script provides a method to convert data from a PVTU file format to an NPZ file format. This script has been used to convert Dendrite outputs (PVTU) to npz format in Flwo Past an Object cases.
 
@@ -74,7 +74,7 @@ The primary purpose of this script is to:
 
 
 
-## LDCdownsampling3D.py
+## LDCdownsampling3D.py - Use this for LDC 3D - NS
 
 This script provides a way to convert data from a 3D PVTU file format to an NPZ file format. This script has been used to convert Dendrite outputs (PVTU) to npz format in 3D Lid Driven Cavity cases.
 

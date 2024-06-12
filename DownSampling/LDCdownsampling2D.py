@@ -5,6 +5,12 @@ from vtk.util.numpy_support import vtk_to_numpy
 import matplotlib.pyplot as plt
 import os
 
+"""Use this code for sampling all 2D LDC Cases both for NS and NSHT"""
+
+#Define Desired Dimensions. Add 1 so that we can compute the Cell Averages
+dim_x = 512 + 1
+dim_y = 512 + 1
+
 # Path to the input PVTU file
 input_file = "sol_00030.pvtu"
 
@@ -16,7 +22,7 @@ reader = XMLPartitionedUnstructuredGridReader(FileName=input_file)
 
 # Resample the data to an image
 resample = ResampleToImage(Input=reader)
-resample.SamplingDimensions = [257, 257, 1]  # Set the desired dimensions of the output image
+resample.SamplingDimensions = [dim_x, dim_y, 1]  # Set the desired dimensions of the output image
 
 # Update the pipeline to ensure the resampling is done
 resample.UpdatePipeline()

@@ -3,6 +3,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 from vtkmodules.util import numpy_support
 
+#Specify Dimensions
+dim_x = 512+1 #Need to Add 1 to the desired x dim. Required for Cell Average Method
+dim_y = 128+1 
+
+
 # Enable VTK multi-threading
 vtk.vtkMultiThreader.SetGlobalDefaultNumberOfThreads(vtk.vtkMultiThreader.GetGlobalMaximumNumberOfThreads())
 
@@ -25,7 +30,7 @@ reader.Update()
 # Resample the data to an image
 resample = vtk.vtkResampleToImage()
 resample.SetInputConnection(reader.GetOutputPort())
-resample.SetSamplingDimensions(1025, 257, 1)  # Adjusted for faster processing
+resample.SetSamplingDimensions(dim_x, dim_y, 1)  # Adjusted for faster processing
 resample.SetSamplingBounds(4.0, 20.0, 6.0, 10.0, 0.0, 0.0)
 resample.Update()
 

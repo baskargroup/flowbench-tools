@@ -5,19 +5,22 @@ from vtk.util.numpy_support import vtk_to_numpy
 import matplotlib.pyplot as plt
 import os
 
+#Specify Dimensions. Add 1 so that we can compute Cell Averages
+dim_x = 128 + 1
+dim_y = 128 + 1
+dim_z = 128 + 1
+
 # Path to the input PVTU file
 input_file = "sol_00030.pvtu"
 
 # Path to save the output .npz file
 output_npz_file = "output_image.npz"
 
-
-
 reader = XMLPartitionedUnstructuredGridReader(FileName=input_file)
 
 # Resample the data to an image
 resample = ResampleToImage(Input=reader)
-resample.SamplingDimensions = [dim_x+1, dim_y+1,dim_z+1]  # Set the desired dimensions of the output image
+resample.SamplingDimensions = [dim_x, dim_y, dim_z]  # Set the desired dimensions of the output image
 
 # Update the pipeline to ensure the resampling is done
 resample.UpdatePipeline()
