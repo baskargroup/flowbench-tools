@@ -6,7 +6,7 @@ We provide a script for each family of our datasets. This prepares the final ten
 - 2D LDC - NS - ldc2dns.py
 - 2D LDC - NS+HT [Constant Reynolds] - ldc2dnsht-constRe.py
 - 2D LDC - NS+HT [Variable Reynolds] - ldc2dnsht-varRe.py
-- 2D FPO - NS - ldc2dfpo.py
+- 2D FPO - NS - fpo2d.py
 - 3D LDC - NS - ldc3dns.py
 
 For a glossary of abbreviations, please refer to Table - 5 in the appendix to our main paper.
@@ -18,7 +18,7 @@ For a glossary of abbreviations, please refer to Table - 5 in the appendix to ou
 	- 2D LDC - NS - ldc2dns.py - e.g., ```X[3000][Re,g,s][512][512] , Y[3000][u,v,p,C][512][512]```. Refer to Table 1 in our supplementary for details about C.
 	- 2D LDC - NS+HT [Constant Reynolds] - ldc2dnsht-constRe.py - e.g., ```X[2990][Gr,g,s][512][512] , Y[2990][u,v,p,theta,C*][512][512]```. Refer to Table 1 in our supplementary for details about C*.
 	- 2D LDC - NS+HT [Variable Reynolds] - ldc2dnsht-varRe.py - e.g., ```X[3000][Ri, Re, g, s][512][512] , Y[3000][u,v,p,theta,C*][512][512]```. Refer to Table 1 in our supplementary for details about C*.
-	- 2D FPO - NS - ldc2dfpo.py - e.g., ```Y[1150][u,v,p][t1...t240][512][128]```.
+	- 2D FPO - NS - fpo2d.py - e.g., ```Y[1150][u,v,p][t1...t240][512][128]```.
 	- 3D LDC - NS - ldc3dns.py - e.g., ```X[500][Re,g,s][128][128][128] , Y[500][u,v,p][128][128][128]```.
 
 ## Requirements
@@ -47,7 +47,7 @@ For a glossary of abbreviations, please refer to Table - 5 in the appendix to ou
 	- ```python3 ldc2dns.py```
 	- ```python3 ldc2dnsht-constRe.py```  
 	- ```python3 ldc2dnsht-varRe.py```
-	- ```python3 ldc2dfpo.py t_start_in t_end_in t_start_out t_end_out ```
+	- ```python3 fpo2d.py t_start_in t_end_in t_start_out t_end_out ```
 	- ```python3 ldc3dns.py```
 
 
