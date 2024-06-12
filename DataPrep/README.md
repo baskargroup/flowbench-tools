@@ -40,6 +40,7 @@ For a glossary of abbreviations, please refer to Table - 5 in the appendix to ou
 	- Full path of the desired X and Y tensors outputs.
 	- Full path of the constants file. We have one constants file per geometry type and problem type. This is not dependent on the output resolution desired.
 	- Full path to the input geometries folder. Note, we have three geometries (100 cases each) at three resolutions each. Please match geometry type and resolution.
+	- Note that these values will have to be edited in the respective script itself before executing the next steps. The relevant variable names associated with the above settings are self explanatory.
 
 - To execute run the following commands
 	- ```python3 ldc2dns.py```
