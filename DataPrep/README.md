@@ -36,7 +36,7 @@ For a glossary of abbreviations, please refer to Table - 5 in the appendix to ou
 
 - Each Script necessitates that the user provide the following:
 	- Path to the downsampled files. Please refer to the directory ```Downsampling``` for detailed instructions.
-	- Resolution (One of 128, 256 or 512)
+	- Desired Output Resolution (One of 128, 256 or 512)
 	- Full path of the desired X and Y tensors outputs.
 	- Full path of the constants file. We have one constants file per geometry type and problem type. This is not dependent on the output resolution desired.
 	- Full path to the input geometries folder. Note, we have three geometries (100 cases each) at three resolutions each. Please match geometry type and resolution.
