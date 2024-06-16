@@ -21,7 +21,7 @@ We include workflows to train three types of neural operators: Fourier Neural Op
 
 ## Data
 
-FlowBench offers over 10,000 solutions for flow around complex geometries in both 2D and 3D. Simulation include fluid flow and thermal flow scenarios, and our solutions are available as either single snapshots or time sequences, addressing both steady-state and time-dependent scenarios. The dataset is provided at three different resolutions and includes essential features like a geometry mask and a signed distance field. It is specifically designed to support the development of next-generation scientific machine learning (SciML) neural PDE solvers, particularly those tackling complex geometries and multiphysics phenomena.
+FlowBench offers over 10,000 solutions for flow around complex geometries in both 2D and 3D. Simulation include fluid flow and thermal flow scenarios, and our solutions are available as either single snapshots or time sequences, addressing both steady-state and time-dependent scenarios. The [dataset](https://figshare.com/s/15e9d23790d0a14e8f71) is provided at three different resolutions and includes essential features like a geometry mask and a signed distance field. It is specifically designed to support the development of next-generation scientific machine learning (SciML) neural PDE solvers, particularly those tackling complex geometries and multiphysics phenomena.
 
 
 <h2> Website </h2>
