@@ -6,14 +6,14 @@ This directory provides a comprehensive list of ML training scripts that can be 
 
 ## Features
 
-- End to end code. Outputs various MSE statistics on a validation dataset and plots represnting the quality of fit.
+- End to end code. Outputs various MSE statistics on a validation dataset and plots representing the quality of fit.
 
 ## Requirements
 
 - ```pip install requirements.txt```
 
 ## Usage
-- Run ```data_prep.py```
+- Have the input and output tensors ready.
 - Under ```experiments``` directory, create a model specific directory e.g., ```cno_1``` or ```fno_1```. Within this second directory create a config file called ```config.yaml```. Follow the example we have provided in this repo.
 - Adjust the following settings as required in the config file, if using CNO:
 
