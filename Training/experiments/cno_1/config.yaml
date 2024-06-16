@@ -1,0 +1,13 @@
+model: "cno"
+file_path_x: '/work/mech-ai/rtali/MPSBench/mehdiMLData/flat_bubbleX4.npz'
+file_path_y: '/work/mech-ai/rtali/MPSBench/mehdiMLData/flat_bubbleY4.npz'
+batch_size: 5
+split_fraction: 0.8
+in_dim: 20
+out_dim: 5
+N_layers: 4
+in_size: 512
+out_size: 512
+learning_rate: 0.001
+num_epochs: 200
+checkpoint_frequency: 50
