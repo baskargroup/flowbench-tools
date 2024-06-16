@@ -13,7 +13,7 @@ This directory provides a comprehensive list of ML training scripts that can be 
 - ```pip install requirements.txt```
 
 ## Usage
-- Have the input and output tensors ready.
+- Have the input and output tensors ready. Feed their full paths under ```file_path_x``` and ```file_path_y``` in the config files (described below)
 - Under ```experiments``` directory, create a model specific directory e.g., ```cno_1``` or ```fno_1```. Within this second directory create a config file called ```config.yaml```. Follow the example we have provided in this repo.
 - Adjust the following settings as required in the config file, if using CNO:
 
