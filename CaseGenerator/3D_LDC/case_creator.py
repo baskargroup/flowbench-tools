@@ -8,7 +8,7 @@ import re
 
 
 
-stl_files = glob.glob('shapes_output_new/*.stl')
+stl_files = glob.glob('shapes/*.stl')
 
 # Function to create a sort key
 def sort_key(name):
