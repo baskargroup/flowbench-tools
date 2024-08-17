@@ -17,7 +17,7 @@ FlowBench is an extensive flow dataset which contains over 10,000 data samples o
 
 ## Model
 
-We include workflows to train three types of neural operators: Fourier Neural Operators (FNO), Convolutional Neural Operators (CNO), and Deep Operator Networks (DeepONets). The implementation of the three networks are included here.
+We include workflows to train three types of neural operators: Fourier Neural Operators (FNO), Convolutional Neural Operators (CNO), and Deep Operator Networks (DeepONets). The implementation of the three networks are included [here](https://github.com/baskargroup/flowbench-tools/tree/master/Training).
 
 ## Data
 
